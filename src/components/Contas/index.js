@@ -46,15 +46,15 @@ function ContasPagar() {
       >
         <label>
           Valor:
-          <input className='ms-1' type="number" name="valor" step="0.01" required />
+          <input className='ms-1' type="number" name="valor" placeholder="Valor total" step="0.01" required />
         </label>
         <label>
           Parcelas:
-          <input className='ms-1' type="number" name="parcelas" required />
+          <input className='ms-1' type="number" placeholder="Em quantas parcelas dividir" name="parcelas" required />
         </label>
         <label>
           Descrição:
-          <input type="text" name="descricao" />
+          <input type="text" name="descricao" placeholder="Digite uma descrição"/>
         </label>
         <button className='w-100 btn-primary' type="submit">Adicionar conta</button>
       </form>
