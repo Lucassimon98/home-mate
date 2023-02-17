@@ -16,6 +16,11 @@ function ContasPagar() {
     }
     setContas([...contas, ...novasContas]);
   };
+  const removerConta = (index) => {
+    const novasContas = [...contas];
+    novasContas.splice(index, 1);
+    setContas(novasContas);
+  };
 
   const marcarComoPago = (index) => {
     const novasContas = [...contas];
