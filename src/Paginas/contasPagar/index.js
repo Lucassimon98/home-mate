@@ -3,7 +3,7 @@ import BarraPerfil from "../../components/BarraPerfil";
 
 import ContasPagar from "../../components/Contas";
 
-function ContasPagar() {
+function Contas() {
   return (
     <div>
         <BarraPerfil />
@@ -12,4 +12,4 @@ function ContasPagar() {
   );
 }
 
-export default ContasPagar;
+export default Contas;
