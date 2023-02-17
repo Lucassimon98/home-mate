@@ -19,9 +19,7 @@ function ContasPagar() {
 
   const marcarComoPago = (index) => {
     const novasContas = [...contas];
-    if (parcelasPagas == parcelas) {
-      novasContas[index].pago = true;
-    }
+    novasContas[index].pago = true;
     novasContas[index].parcelasPagas++;
     setContas(novasContas);
   };
@@ -72,7 +70,7 @@ function ContasPagar() {
         </thead>
         <tbody>
           {contas.map((conta, index) => (
-            <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-spacearound' : 'd-flex w-100 justify-content-spacearound'}>
+            <tr key={index} className={conta.parcelasPagas == conta.parcelas ? 'pago d-flex w-100 justify-content-spacearound' : 'd-flex w-100 justify-content-spacearound'}>
               <td>{conta.valor.toFixed(2)}</td>
               <td>{conta.descricao}</td>
               <td>
