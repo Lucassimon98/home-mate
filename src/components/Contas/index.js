@@ -19,10 +19,10 @@ function ContasPagar() {
 
   const marcarComoPago = (index) => {
     const novasContas = [...contas];
+    novasContas[index].parcelasPagas++;
     if(novasContas[index].parcelas == novasContas[index].parcelasPagas - 1) {
       novasContas[index].pago = true;
     }
-    novasContas[index].parcelasPagas++;
     setContas(novasContas);
   };
 
