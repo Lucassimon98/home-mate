@@ -2,6 +2,13 @@ a {
     text-decoration: none!important;
 }
 .card {
-    width: 17rem;;
+    width: 17rem;
     margin-top: 2rem;
+}
+
+@media screen (max-width: 768px){
+    .card {
+        width: 17rem;
+        font-size: 25px;
+    }
 }
