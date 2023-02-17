@@ -13,6 +13,9 @@ function ContasPagar() {
 
   const removerConta = (index) => {
     const novasContas = [...contas];
+    if (parcelasPagas == parcelas) {
+      novasContas[index].pago = true;
+    }
     novasContas.splice(index, 1);
     setContas(novasContas);
   };
