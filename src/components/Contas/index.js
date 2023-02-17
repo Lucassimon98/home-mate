@@ -74,7 +74,9 @@ function ContasPagar() {
             <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-spacearound' : 'd-flex w-100 justify-content-spacearound'}>
               <td>{conta.valor.toFixed(2)}</td>
               <td>{conta.descricao}</td>
-              <td>{`${conta.parcelasPagas + 1}/${conta.parcelas}`}</td>
+              <td>
+                {conta.parcelasPagas}/{conta.parcelas}
+              </td>
               <td>{conta.pago ? 'Sim' : 'Não'}</td>
               <td>
                 <button className='btn-primary'
