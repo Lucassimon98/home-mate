@@ -7,15 +7,11 @@ function ContasPagar() {
   const adicionarConta = (valor, parcelas, descricao) => {
     const novasContas = [];
     for (let i = 1; i <= parcelas; i++) {
-      novasContas.push({
-        valor: valor / parcelas,
-        pago: false,
-        descricao: descricao,
-        numParcela: i,
-      });
+      novasContas.push({ valor: valor / parcelas, pago: false, parcelas: parcelas, parcelasPagas: 0, descricao: descricao });
     }
     setContas([...contas, ...novasContas]);
   };
+
   const removerConta = (index) => {
     const novasContas = [...contas];
     novasContas.splice(index, 1);
@@ -25,19 +21,13 @@ function ContasPagar() {
   const marcarComoPago = (index) => {
     const novasContas = [...contas];
     novasContas[index].pago = true;
+    novasContas[index].parcelasPagas++;
     setContas(novasContas);
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const contasAtualizadas = contas.map((conta) => {
-        if (conta.pago) {
-          return conta;
-        } else {
-          return { ...conta, numParcela: conta.numParcela + 1 };
-        }
-      });
-      setContas(contasAtualizadas);
+      setContas(contas.filter(conta => !conta.pago));
     }, 2000);
     return () => clearTimeout(timer);
   }, [contas]);
@@ -84,11 +74,12 @@ function ContasPagar() {
             <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-spacearound' : 'd-flex w-100 justify-content-spacearound'}>
               <td>{conta.valor.toFixed(2)}</td>
               <td>{conta.descricao}</td>
-              <td>{`${conta.numParcela}/${conta.numParcela +
-                conta.parcelas -
-                1}`}</td>
               <td>
-                <button
+                {conta.parcelasPagas}/{conta.parcelas}
+              </td>
+              <td>{conta.pago ? 'Sim' : 'Não'}</td>
+              <td>
+                <button className='btn-primary'
                   onClick={() => marcarComoPago(index)}
                   disabled={conta.pago}
                 >
