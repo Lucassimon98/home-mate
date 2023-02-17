@@ -8,7 +8,7 @@ a {
 
 @media (max-width: 768px){
     .card {
-        width: 17rem;
+        width: 8rem;
         font-size: 25px;
     }
 }
