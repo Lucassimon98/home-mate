@@ -38,7 +38,7 @@ const TodoList = () => {
 
     return (
         <div className='d-flex align-items-center flex-column'>
-            <h3>Lista de Compras</h3>
+            <h2>Lista de Compras</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit}>
                 <label className='text-center' htmlFor="new-todo">O que precisa comprar?</label>
                 <br />
@@ -59,7 +59,7 @@ const TodoList = () => {
             {selected.length > 0 ? (
                 <button className='btn-danger' onClick={() => handleDelete(selected)}>Excluir selecionados</button>
             ) : (
-                <button className='w-auto' disabled>Excluir</button>
+                <button className='w-auto' disabled>Selecione para remover</button>
             )}
         </div>
     );
