@@ -6,9 +6,8 @@ function ContasPagar() {
 
   const adicionarConta = (valor, parcelas, descricao) => {
     const novasContas = [];
-    for (let i = 1; i <= parcelas; i++) {
-      novasContas.push({ valor: valor, pago: false, parcelas: parcelas, parcelasPagas: 0, descricao: descricao });
-    }
+      novasContas.push({ valor: valor / parcelas, pago: false, parcelas: parcelas, parcelasPagas: 0, descricao: descricao });
+    
     setContas([...contas, ...novasContas]);
   };
 
