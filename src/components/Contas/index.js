@@ -1,3 +1,4 @@
+import './index.css'
 import { useState, useEffect } from 'react';
 
 function ContasPagar() {
