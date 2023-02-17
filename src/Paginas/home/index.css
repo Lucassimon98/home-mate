@@ -2,5 +2,6 @@ a {
     text-decoration: none!important;
 }
 .card {
+    width: 17rem;;
     margin-top: 2rem;
 }
