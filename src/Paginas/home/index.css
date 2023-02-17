@@ -9,6 +9,6 @@ a {
 @media (max-width: 768px){
     .card {
         width: 8rem;
-        font-size: 25px;
+        font-size: 25px!important;
     }
 }
