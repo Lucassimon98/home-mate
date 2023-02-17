@@ -7,7 +7,7 @@ function ContasPagar() {
   const adicionarConta = (valor, parcelas, descricao) => {
     const novasContas = [];
     for (let i = 1; i <= parcelas; i++) {
-      novasContas.push({ valor: valor / parcelas, pago: false, descricao });
+      novasContas.push({ valor: valor / parcelas, pago: false, parcelas: parcelas, parcelasPagas: 0, descricao: descricao });
     }
     setContas([...contas, ...novasContas]);
   };
@@ -21,6 +21,7 @@ function ContasPagar() {
   const marcarComoPago = (index) => {
     const novasContas = [...contas];
     novasContas[index].pago = true;
+    novasContas[index].parcelasPagas = novasContas[index].parcelasPagas + 1;
     setContas(novasContas);
   };
 
@@ -72,8 +73,8 @@ function ContasPagar() {
           {contas.map((conta, index) => (
             <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-spacearound' : 'd-flex w-100 justify-content-spacearound'}>
               <td>{conta.valor.toFixed(2)}</td>
-              <td>{conta.descricao || '-'}</td>
-              <td>{conta.parcelas || '1'}</td>
+              <td>{conta.descricao}</td>
+              <td>{`${conta.parcelasPagas + 1}/${conta.parcelas}`}</td>
               <td>{conta.pago ? 'Sim' : 'Não'}</td>
               <td>
                 <button className='btn-primary'
