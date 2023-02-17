@@ -31,9 +31,9 @@ function ContasPagar() {
   }, [contas]);
 
   return (
-    <div>
+    <div className='d-flex flex-column align-items-center'>
       <h2>Contas a pagar</h2>
-      <form
+      <form className='d-flex flex-column align-items-end'
         onSubmit={(event) => {
           event.preventDefault();
           const valor = Number(event.target.elements.valor.value);
@@ -44,17 +44,17 @@ function ContasPagar() {
       >
         <label>
           Valor:
-          <input type="number" name="valor" step="0.01" required />
+          <input className='ms-1' type="number" name="valor" step="0.01" required />
         </label>
         <label>
           Parcelas:
-          <input type="number" name="parcelas" required />
+          <input className='ms-1' type="number" name="parcelas" required />
         </label>
-        <button type="submit">Adicionar conta</button>
+        <button className='w-100 btn-primary' type="submit">Adicionar conta</button>
       </form>
       <table>
         <thead>
-          <tr>
+          <tr className='d-flex w-100 justify-content-around'>
             <th>Valor</th>
             <th>Pago</th>
             <th>Ações</th>
@@ -62,17 +62,17 @@ function ContasPagar() {
         </thead>
         <tbody>
           {contas.map((conta, index) => (
-            <tr key={index} className={conta.pago ? 'pago' : ''}>
+            <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-around' : 'd-flex w-100 justify-content-around'}>
               <td>{conta.valor.toFixed(2)}</td>
               <td>{conta.pago ? 'Sim' : 'Não'}</td>
               <td>
-                <button
+                <button className='btn-primary'
                   onClick={() => marcarComoPago(index)}
                   disabled={conta.pago}
                 >
                   Pagar
                 </button>
-                <button onClick={() => removerConta(index)}>Remover</button>
+                <button className='btn-danger' onClick={() => removerConta(index)}>Remover</button>
               </td>
             </tr>
           ))}
