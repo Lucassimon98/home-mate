@@ -2,13 +2,24 @@ a {
     text-decoration: none!important;
 }
 .card {
-    width: 17rem;
+    width: 20rem;
     margin-top: 2rem;
+}
+
+@media (max-width: 320px){
+    .card {
+        width: 8rem;
+    }
+    .card h2 {
+        font-size: 12px!important;
+    }
 }
 
 @media (max-width: 768px){
     .card {
-        width: 8rem;
+        width: 10rem;
+    }
+    .card h2 {
         font-size: 25px!important;
     }
 }
