@@ -21,7 +21,7 @@ function ContasPagar() {
   const marcarComoPago = (index) => {
     const novasContas = [...contas];
     novasContas[index].pago = true;
-    novasContas[index].parcelasPagas = novasContas[index].parcelasPagas + 1;
+    novasContas[index].parcelasPagas++;
     setContas(novasContas);
   };
 
