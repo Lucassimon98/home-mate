@@ -52,9 +52,9 @@ function ContasPagar() {
         </label>
         <button className='w-100 btn-primary' type="submit">Adicionar conta</button>
       </form>
-      <table>
-        <thead>
-          <tr className='d-flex w-100 justify-content-around'>
+      <table className='w-100'>
+        <thead className='w-100'>
+          <tr className='d-flex w-100 justify-content-spacearound'>
             <th>Valor</th>
             <th>Pago</th>
             <th>Ações</th>
@@ -62,7 +62,7 @@ function ContasPagar() {
         </thead>
         <tbody>
           {contas.map((conta, index) => (
-            <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-around' : 'd-flex w-100 justify-content-around'}>
+            <tr key={index} className={conta.pago ? 'pago d-flex w-100 justify-content-spacearound' : 'd-flex w-100 justify-content-spacearound'}>
               <td>{conta.valor.toFixed(2)}</td>
               <td>{conta.pago ? 'Sim' : 'Não'}</td>
               <td>
