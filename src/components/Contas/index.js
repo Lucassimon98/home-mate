@@ -34,7 +34,7 @@ function ContasPagar() {
   return (
     <div>
       <h2>Contas a pagar</h2>
-      <form
+      <form className='d-flex flex-column align-items-end'
         onSubmit={(event) => {
           event.preventDefault();
           const valor = Number(event.target.elements.valor.value);
