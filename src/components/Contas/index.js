@@ -32,7 +32,7 @@ function ContasPagar() {
   }, [contas]);
 
   return (
-    <div>
+    <div className='d-flex flex-column align-items-center'>
       <h2>Contas a pagar</h2>
       <form className='d-flex flex-column align-items-end'
         onSubmit={(event) => {
