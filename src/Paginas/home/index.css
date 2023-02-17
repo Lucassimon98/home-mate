@@ -6,7 +6,7 @@ a {
     margin-top: 2rem;
 }
 
-@media screen (max-width: 768px){
+@media (max-width: 768px){
     .card {
         width: 17rem;
         font-size: 25px;
