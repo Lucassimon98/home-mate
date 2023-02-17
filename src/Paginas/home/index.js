@@ -13,7 +13,7 @@ function Home() {
                         funcao="Lista de Mercado"
                     />
                     <Card
-                        link={'https://www.google.com'}
+                        link={'/contaspagar'}
                         funcao="Contas de Casa"
                     />
                 </div>
