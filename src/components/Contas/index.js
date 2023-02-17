@@ -50,7 +50,7 @@ function ContasPagar() {
         </label>
         <label>
           Parcelas:
-          <input className='ms-1' type="number" placeholder="Em quantas parcelas dividir" name="parcelas" required />
+          <input className='ms-1' type="number" placeholder="Dividir em:" name="parcelas" required />
         </label>
         <label>
           Descrição:
