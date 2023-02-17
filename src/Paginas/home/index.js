@@ -17,16 +17,6 @@ function Home() {
                         funcao="Contas de Casa"
                     />
                 </div>
-                <div className="row">
-                    <Card
-                        link={'https://www.google.com'}
-                        funcao="Lista de Tarefas"
-                    />
-                    <Card
-                        link={'https://www.google.com'}
-                        funcao="Outros"
-                    />
-                </div>
             </div>
         </div>
     );
