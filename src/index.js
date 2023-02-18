@@ -5,8 +5,6 @@ import App from "./App";
 
 import "./index.css";
 
-import firebase from 'firebase/compat/app';
-firebase.app();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
