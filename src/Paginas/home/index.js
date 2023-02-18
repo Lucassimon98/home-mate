@@ -1,5 +1,3 @@
-firebase.initializeApp(app);
-
 import './index.css';
 import Card from '../../components/Card';
 import BarraPerfil from '../../components/BarraPerfil';
