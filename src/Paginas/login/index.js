@@ -1,15 +1,15 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+<button onClick={signInWithGoogle}>Entrar com o Google</button>
 
-function Login() {
-  const loginWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
-  };
-
-  return (
-    <button onClick={loginWithGoogle}>Entrar com o Google</button>
-  );
-}
-
-export default Login;
+// defina a função de login com o provedor de login do Google
+const signInWithGoogle = () => {
+  firebase.auth().signInWithPopup(provider)
+    .then((result) => {
+      // o usuário foi autenticado com sucesso
+      const user = result.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      // ocorreu um erro ao autenticar o usuário
+      console.log(error);
+    });
+};
