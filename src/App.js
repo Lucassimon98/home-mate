@@ -1,3 +1,6 @@
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+
 import * as React from "react";
 import { Routes, Route} from "react-router-dom";
 import Contas from "./Paginas/contasPagar";
