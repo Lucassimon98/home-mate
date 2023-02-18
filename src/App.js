@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
+firebase.initializeApp(config);
+
 import * as React from "react";
 import { Routes, Route} from "react-router-dom";
 import Contas from "./Paginas/contasPagar";
